@@ -31,7 +31,6 @@ set autowrite
 set backspace=indent,eol,start
 set formatoptions=croqlj
 set history=1000
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set noerrorbells
 set noshowmode
 set nowrap
