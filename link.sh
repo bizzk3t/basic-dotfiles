@@ -1,9 +1,10 @@
 #!/bin/sh
-declare -a FILES=$(find . -type f -maxdepth 1 -name ".*" -not -name .git | sed -e 's|//|/|' | sed -e 's|./.|.|')
 
-for i in ${FILES[@]}; do
-  sourceFile="$(pwd)/$i"
-  targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+FILES=".bash_profile .bashrc .hushlogin .inputrc .profile .vimrc"
+
+for i in $FILES; do
+  sourceFile="$PWD/$i"
+  targetFile="$HOME/$i"
   
   echo "Linking $targetfile -> $sourcefile"
   
