@@ -30,6 +30,7 @@ set autoread
 set autowrite
 set backspace=indent,eol,start
 set formatoptions=croqlj
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set history=1000
 set noerrorbells
 set noshowmode
@@ -41,7 +42,6 @@ set cmdheight=1
 set laststatus=2
 set display+=lastline
 set ruler
-set fillchars+=vert:│
 set number
 set incsearch
 set hlsearch
