@@ -5,6 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged/')
+Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tyru/caw.vim'
 Plug 'tpope/vim-dispatch'
@@ -19,9 +20,13 @@ set nocompatible
 
 let mapleader="\<Space>"
 set background=dark
+set termguicolors
+set t_Co=256
 
 filetype plugin indent on
 syntax on
+
+colorscheme will
 
 set completeopt=menu,menuone,popup
 set shortmess-=S
