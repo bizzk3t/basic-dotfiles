@@ -24,20 +24,9 @@ export LESS_TERMCAP_se=$(printf '\e[0m')        # standout end
 export LESS_TERMCAP_ue=$(printf '\e[0m')        # underline end
 export LESS_TERMCAP_us=$(printf '\e[01;37m')    # underline begin
 
-
-
-alias dots="cd $DOTFILES"
-alias p="cd ~/projects"
-alias cdp="cd ~/projects"
-
-alias ':q'="exit"
-alias .....="cd ../../../.."
-alias ....="cd ../../.."
-alias ...="cd ../.."
-alias ..="cd .."
-alias cd..="cd .."
-alias cs="cd"
-
+server() {
+  $(which python3) -m http.server "$@"
+}
 
 md() {
         mkdir -p "$@" && cd "$@"
@@ -51,9 +40,23 @@ rmm() {
   mv --backup=numbered "$@" "$HOME/.trash"
 }
 
-alias sap="sudo apt install"
 alias rm="rmm"
 alias emptytrash="sudo /bin/rm -rf ~/.trash/ && mkdir ~/.trash"
+
+alias dots="cd $DOTFILES"
+
+alias p="cd ~/projects"
+alias cdp="cd ~/projects"
+
+alias ':q'="exit"
+alias .....="cd ../../../.."
+alias ....="cd ../../.."
+alias ...="cd ../.."
+alias ..="cd .."
+alias cd..="cd .."
+alias cs="cd"
+
+alias sap="sudo apt install"
 
 alias ports="lsof -i -P -n"
 
