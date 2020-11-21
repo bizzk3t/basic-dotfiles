@@ -1,3 +1,5 @@
 #!/bin/sh
 
-echo "hello"
+for i in $(ls .[^.]*); do
+  ln -sf "$PWD/$i" "$HOME/$i"
+done
