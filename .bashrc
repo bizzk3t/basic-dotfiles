@@ -51,6 +51,7 @@ rmm() {
   mv --backup=numbered "$@" "$HOME/.trash"
 }
 
+alias sap="sudo apt install"
 alias rm="rmm"
 alias emptytrash="sudo /bin/rm -rf ~/.trash/ && mkdir ~/.trash"
 
