@@ -1,5 +1,5 @@
 #!/bin/sh
-
-for i in $(find . -name '.[^.]*' -not -name .git); do
-  ln -sf "$PWD/$i" "$HOME/$i"
+FILES="find . -name '.[^.]*' -maxdepth 1 -type f -not -name .git -printf '%P\n'"
+for file in $FILES; do
+  ln -sf "$PWD/$file" "$HOME/$file"
 done
