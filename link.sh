@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FILES=".bash_profile .bashrc .hushlogin .inputrc .profile .vimrc"
+FILES=".bash_profile .bashrc .hushlogin .inputrc .profile .vimrc .vim"
 
 for i in $FILES; do
   sourcefile="$PWD/$i"
