@@ -63,7 +63,7 @@ alias s="ls"
 alias sl="ls"
 alias sls="ls"
 
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
 shopt -s autocd
 shopt -s cdspell
 shopt -s checkwinsize
