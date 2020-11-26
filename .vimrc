@@ -7,8 +7,9 @@ endif
 call plug#begin('~/.vim/plugged/')
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
+
 Plug 'tyru/caw.vim'
-Plug 'tpope/vim-dispatch'
+
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -146,9 +147,6 @@ function! SyntaxItem() abort
 endfunction
 nnoremap <Leader>hi :echo SyntaxItem()<CR>
 
-nnoremap n nzz
-nnoremap N Nzz
-
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 nnoremap <C-]> <C-]>zz
@@ -170,7 +168,6 @@ vnoremap gu <Nop>
 vnoremap gU <Nop>
 vnoremap <Leader>gu gu
 vnoremap <Leader>gU gU
-nnoremap <Leader>ff :ALEFix<CR>
 
 nnoremap <Leader>K K
 map K <Nop>
@@ -200,6 +197,6 @@ augroup filetype_help
         au FileType help nnoremap <silent> <buffer> <S-Tab> ?\('\zs\k\+'\\|[<Bar>]\zs\k\+[<Bar>]\)<CR>:set nohlsearch<CR>
         au FileType help nnoremap <silent> <buffer> <BS> <C-o>
         au FileType help nnoremap <silent> <buffer> <CR> <C-]>
-        au FileType help setlocal nohlsearch
         au Filetype help nnoremap <buffer> q :q<CR>
+        au FileType help setlocal nohlsearch
 augroup END
