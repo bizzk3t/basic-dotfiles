@@ -1,18 +1,10 @@
 #!/usr/bin/env sh
 
-# DID_FAIL=0
-
-# FAIL_TOTAL=0
-# PASS_TOTAL=0
-# FAIL_TOTAL=$(($FAIL_TOTAL + 1))
-# PASS_TOTAL=$(($PASS_TOTAL + 1))
-DID_FAIL=1
-
+DID_FAIL=0
 
 print_color() {
         printf "\e[3%sm%s\e[m" "$1" "$2"
 }
-
 
 print_red() {
         print_color 1 "$1"
@@ -47,23 +39,16 @@ main() {
         printf "\nRunning Tests...\n\n"
 
         for i in $FILES; do
-                if [ ! -d "$1" ]; then
-                        test -f "$1"
+                local fname="$HOME/$i"
+                if [ ! -d "$fname" ]; then
+                        test -f "$fname"
                         print_result $? "File Exists"
 
-                        cmp -s $1 $2
+                        cmp -s "$fname" "$PWD/src/$i"
                         print_result $? "Files are equal"
                 fi
-                exists "$HOME/$i"
-                file_compare "$HOME/$i" "$PWD/src/$i"
         done
-
-        printf "\nTOTAL\n\n"
-        printf "Fail: $FAIL_TOTAL\n"
-        printf "Pass: $PASS_TOTAL\n\n"
-
         print_result $DID_FAIL "Checking Files"
-        # [ $DID_FAIL -eq 1 ] && exit 1 || exit 0
 }
 
 main
