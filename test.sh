@@ -20,36 +20,34 @@ exists() {
         if [[ -e "$@" ]]; then
                 pass "File exists $@"
         else
-                fail "File does not exist $@"
+                fail "File does not exist '$@'"
         fi
 }
 
 file_compare () {
-        if [[ "$(cat "$1")" == "$(cat "$2")" ]]; then
+        if [[ -d "$1" ]]; then
+                return 
+        fi
+
+        if cmp -s $1 $2; then
                 pass "$1 == $2" 
         else
                 fail "File '$1' does not match '$2'"
         fi
 }
 
-test_exists() {
-        for i in "$@"; do
+run_tests() {
+        for i in $FILES; do
                 exists "$HOME/$i"
+                file_compare "$HOME/$i" "$PWD/src/$i"
         done
 }
 
-test_compare() {
-        for i in "$@"; do
-                file_compare "$HOME/$i" "$PWD/$i"
-        done
-}
-
-FILES=".bashrc .bash_profile .hushlogin .inputrc .profile .vimrc"
+FILES="$(find $PWD/src -name '*' -mindepth 1 -maxdepth 1 -exec basename {} \;)"
 
 printf "\nRunning Tests...\n\n"
 
-test_exists $FILES
-test_compare $FILES
+run_tests
 
 printf "\nTOTAL\n\n"
 printf "Fail: $FAIL_TOTAL\n"

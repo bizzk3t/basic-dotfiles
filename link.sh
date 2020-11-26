@@ -1,20 +1,13 @@
 #!/bin/sh
 
-FILES=$(cat<<EOF
-.bash_profile
-.bashrc
-.hushlogin
-.inputrc
-.profile
-.vim
-.vimrc
-EOF
-)
+
+FILES="$(find $PWD/src -name '*' -mindepth 1 -maxdepth 1 -exec basename {} \;)"
 
 echo "Linking Files"
 
+dotdir="$PWD/src"
 for i in $FILES; do
-  sourcefile="$PWD/$i"
+  sourcefile="${dotdir}/$i"
   targetfile="$HOME/$i"
   
   echo "$targetfile -> $sourcefile"
