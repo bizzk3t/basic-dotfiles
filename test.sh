@@ -40,10 +40,6 @@ print_result() {
         return "$1"
 }
 
-file_compare () {
-
-}
-
 main() {
 
         FILES="$(find $PWD/src -name '*' -mindepth 1 -maxdepth 1 -exec basename {} \;)"
