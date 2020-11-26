@@ -1,5 +1,3 @@
-"\C-\b": backward-kill-word
-# "\C-h": backward
 "\C-d": kill-whole-line
 "\C-n": history-search-forward
 "\C-p": history-search-backward
@@ -8,18 +6,25 @@
 
 set bell-style none
 set colored-stats on
+
 set completion-ignore-case on
 set completion-map-case on
 set completion-query-items 200
+
 set convert-meta off
 set echo-control-characters off
 set enable-bracketed-paste
+
 set expand-tilde off
 set input-meta on
+
 set mark-directories on
 set match-hidden-files off
+
 set output-meta on
 set page-completions off
+
 set show-all-if-ambiguous on
 set skip-completed-text on
+
 set visible-stats off
