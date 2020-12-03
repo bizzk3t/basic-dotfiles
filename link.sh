@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
 
 FILES="$(find $PWD/src -mindepth 1 -maxdepth 1 -name '*' -exec basename {} \;)"
 

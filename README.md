@@ -10,7 +10,4 @@ wget -O- https://git.io/Jk2oa | sh
 
 [https://git.io/Jk2oa](https://git.io/Jk2oa) is short for [https://raw.githubusercontent.com/bizzk3t/basic-dotfiles/main/install.sh](https://raw.githubusercontent.com/bizzk3t/basic-dotfiles/main/install.sh)
 
-To run tests locally
-```sh
-act
-```
+Use [act](https://github.com/nektos/act) to run github actions locally
