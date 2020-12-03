@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-FILES="$(find $PWD/src -name '*' -mindepth 1 -maxdepth 1 -exec basename {} \;)"
+FILES="$(find $PWD/src -mindepth 1 -maxdepth 1 -name '*' -exec basename {} \;)"
 
 echo "Linking Files"
 
